@@ -10,13 +10,13 @@ const regexDataKey = /[A-Z]/g
 function normalizeData(val) {
   if (val === 'true') {
     return true
-  } else if (val === 'false') {
+  } if (val === 'false') {
     return false
-  } else if (val === 'null') {
+  } if (val === 'null') {
     return null
-  } else if (val === Number(val).toString()) {
+  } if (val === Number(val).toString()) {
     return Number(val)
-  } else if (val === '') {
+  } if (val === '') {
     return null
   }
 
@@ -24,7 +24,7 @@ function normalizeData(val) {
 }
 
 function normalizeDataKey(key) {
-  return key.replace(regexDataKey, (chr) => chr.toLowerCase())
+  return key.replace(regexDataKey, chr => chr.toLowerCase())
 }
 
 const Manipulator = {
@@ -55,8 +55,7 @@ const Manipulator = {
 
   getDataAttribute(element, key) {
     return normalizeData(element
-      .getAttribute(`data-${normalizeDataKey(key)}`)
-    )
+      .getAttribute(`data-${normalizeDataKey(key)}`))
   },
 
   offset(element) {
